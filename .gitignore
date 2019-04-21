@@ -1,0 +1,21 @@
+.checkstyle
+.gradle
+/bin/
+/build/
+/log/
+/out/
+/test-output/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
