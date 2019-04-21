@@ -4,7 +4,6 @@ import java.util.*;
 
 public class MatchingTags {
     public static void matchTags(String input) {
-        // input is like "(ABC){DEF}";
         Stack<Character> stack = new Stack<>();
         Map<Character, Character> matchingTagsMap = new HashMap<>();
         matchingTagsMap.put('}', '{');
