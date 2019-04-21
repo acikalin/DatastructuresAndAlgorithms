@@ -1,6 +1,6 @@
 package com.coding.datastructures;
 
-import com.coding.datastructures.exceptions.StackUnderFlowException;
+import java.util.NoSuchElementException;
 
 public class Stack<T> {
 
@@ -24,9 +24,9 @@ public class Stack<T> {
 
     }
 
-    public T pop() throws StackUnderFlowException {
+    public T pop() throws NoSuchElementException {
         if (head == null) {
-            throw new StackUnderFlowException();
+            throw new NoSuchElementException("Stack underflow");
         }
         T popData = head.getData();
         head = head.getNext();
@@ -34,9 +34,9 @@ public class Stack<T> {
         return popData;
     }
 
-    public T peek() throws StackUnderFlowException {
+    public T peek() throws NoSuchElementException {
         if (head == null) {
-            throw new StackUnderFlowException();
+            throw new NoSuchElementException("Stack underflow");
         }
         return head.getData();
     }
