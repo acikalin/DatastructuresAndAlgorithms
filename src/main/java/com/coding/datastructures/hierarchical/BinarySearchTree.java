@@ -117,6 +117,48 @@ public class BinarySearchTree {
         return sum;
     }
 
+    public static Node LCA(Node<Integer> root, int n1, int n2)
+    {
+        if (root == null)
+            return null;
+        if (root.getData() == n1 || root.getData() == n2)
+            return root;
+
+        Node left = LCA(root.getLeftChild(), n1, n2);
+        Node right = LCA(root.getRightChild(), n1, n2);
+
+        if (left != null && right != null)
+            return root;
+        if (left != null)
+            return LCA(root.getLeftChild(), n1, n2);
+        else
+            return LCA(root.getRightChild(), n1, n2);
+    }
+
+    // Returns level of key k if it is present in
+    // tree, otherwise returns -1
+    public static int findLevel(Node root, int a, int level)
+    {
+        if (root == null)
+            return -1;
+        if (root.getData() == Integer.valueOf(a))
+            return level;
+        int left = findLevel(root.getLeftChild(), a, level + 1);
+        if (left == -1)
+            return findLevel(root.getRightChild(), a, level + 1);
+        return left;
+    }
+
+    public static int findDistance(Node root, int a, int b)
+    {
+        Node lca = LCA(root, a, b);
+
+        int d1 = findLevel(lca, a, 0);
+        int d2 = findLevel(lca, b, 0);
+
+        return d1 + d2;
+    }
+
     public static void print(Node node) {
         if (node == null) {
             System.out.print("Not found!");
