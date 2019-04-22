@@ -1,4 +1,4 @@
-package com.coding.datastructures.examples;
+package com.coding.datastructures.linear.examples;
 
 import java.util.Stack;
 

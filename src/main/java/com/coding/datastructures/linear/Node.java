@@ -1,4 +1,4 @@
-package com.coding.datastructures;
+package com.coding.datastructures.linear;
 
 public class Node<T> {
     private T data;
